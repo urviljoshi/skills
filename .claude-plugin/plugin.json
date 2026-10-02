@@ -1,0 +1,11 @@
+{
+  "name": "explain",
+  "description": "Skills and agents that make model output easier to understand: plain controlled-language writing, diagrams, interactive web pages, and narrated explainer videos.",
+  "version": "0.1.0",
+  "author": {
+    "name": "urviljoshi"
+  },
+  "repository": "https://github.com/urviljoshi/agent-workflow-packs",
+  "license": "MIT",
+  "keywords": ["explain", "writing", "diagram", "html", "video", "manim"]
+}

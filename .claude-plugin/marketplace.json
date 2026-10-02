@@ -1,0 +1,16 @@
+{
+  "name": "agent-workflow-packs",
+  "owner": {
+    "name": "urviljoshi"
+  },
+  "metadata": {
+    "description": "Skills and custom agents for coding agents."
+  },
+  "plugins": [
+    {
+      "name": "explain",
+      "source": "./",
+      "description": "Skills and agents that make model output easier to understand: plain controlled-language writing, diagrams, interactive web pages, and narrated explainer videos."
+    }
+  ]
+}
