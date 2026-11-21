@@ -1,4 +1,20 @@
-# Tompachilo skills
+# Skills
+
+Skills and custom agents for coding agents: Claude Code, Codex, GitHub Copilot, and any other agent that reads the `SKILL.md` format.
+
+## Quick start
+
+Install with **Tompachilo**, the skill installer:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/urviljoshi/skills/main/install.sh | bash
+```
+
+On Windows PowerShell: `irm https://raw.githubusercontent.com/urviljoshi/skills/main/install.ps1 | iex`
+
+## Install
+
+### Tompachilo installer (recommended)
 
 ```
 ████████╗ ██████╗ ███╗   ███╗██████╗  █████╗  ██████╗██╗  ██╗██╗██╗      ██████╗
@@ -9,21 +25,7 @@
    ╚═╝    ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝╚══════╝ ╚═════╝
 ```
 
-Skills and custom agents for coding agents: Claude Code, Codex, GitHub Copilot, and any other agent that reads the `SKILL.md` format.
-
-## Quick start
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/urviljoshi/skills/main/install.sh | bash
-```
-
-On Windows PowerShell: `irm https://raw.githubusercontent.com/urviljoshi/skills/main/install.ps1 | iex`
-
-## Install
-
-### Installer script (recommended)
-
-An interactive installer asks which skills you want, which coding agents to install them for (Claude Code, Codex, GitHub Copilot), whether to install globally or into the current project, and which custom agents you want.
+Tompachilo is an interactive installer. It asks which skills you want, which coding agents to install them for (Claude Code, Codex, GitHub Copilot), whether to install globally or into the current project, and which custom agents you want.
 
 macOS, Linux, or Git Bash on Windows:
 
