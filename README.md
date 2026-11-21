@@ -1,6 +1,23 @@
-# agent-workflow-packs
+# Tompachilo skills
 
-Skills and custom agents for coding agents: Claude Code, Codex, Cursor, and any other agent that reads the `SKILL.md` format.
+```
+████████╗ ██████╗ ███╗   ███╗██████╗  █████╗  ██████╗██╗  ██╗██╗██╗      ██████╗
+╚══██╔══╝██╔═══██╗████╗ ████║██╔══██╗██╔══██╗██╔════╝██║  ██║██║██║     ██╔═══██╗
+   ██║   ██║   ██║██╔████╔██║██████╔╝███████║██║     ███████║██║██║     ██║   ██║
+   ██║   ██║   ██║██║╚██╔╝██║██╔═══╝ ██╔══██║██║     ██╔══██║██║██║     ██║   ██║
+   ██║   ╚██████╔╝██║ ╚═╝ ██║██║     ██║  ██║╚██████╗██║  ██║██║███████╗╚██████╔╝
+   ╚═╝    ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝╚══════╝ ╚═════╝
+```
+
+Skills and custom agents for coding agents: Claude Code, Codex, GitHub Copilot, and any other agent that reads the `SKILL.md` format.
+
+## Quick start
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/urviljoshi/skills/main/install.sh | bash
+```
+
+On Windows PowerShell: `irm https://raw.githubusercontent.com/urviljoshi/skills/main/install.ps1 | iex`
 
 ## Install
 
@@ -43,13 +60,13 @@ Where the installer puts files:
 ### Any agent: `npx skills`
 
 ```bash
-npx skills@latest add urviljoshi/agent-workflow-packs
+npx skills@latest add urviljoshi/skills
 ```
 
-The installer asks which skills you want and which agents to install them for. To install one skill:
+`npx skills` also asks which skills you want and which agents to install them for. To install one skill:
 
 ```bash
-npx skills@latest add urviljoshi/agent-workflow-packs --skill explain-html
+npx skills@latest add urviljoshi/skills --skill explain-html
 ```
 
 ### Claude Code: plugin
@@ -57,7 +74,7 @@ npx skills@latest add urviljoshi/agent-workflow-packs --skill explain-html
 This also installs the custom agents.
 
 ```
-/plugin marketplace add urviljoshi/agent-workflow-packs
+/plugin marketplace add urviljoshi/skills
 /plugin install explain@agent-workflow-packs
 ```
 
@@ -118,6 +135,8 @@ install.sh, install.ps1     interactive installers; they find new skills and age
 ## Contributing
 
 See [AGENTS.md](AGENTS.md) for the conventions that a new skill or agent must follow.
+
+You do not need to change the installer scripts when you add a skill or an agent. They read `skills/*/SKILL.md` and `agents/*.md` when they run, and show each one in the menu with its `description`.
 
 ## License
 
