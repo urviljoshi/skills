@@ -4,6 +4,42 @@ Skills and custom agents for coding agents: Claude Code, Codex, Cursor, and any 
 
 ## Install
 
+### Installer script (recommended)
+
+An interactive installer asks which skills you want, which coding agents to install them for (Claude Code, Codex, GitHub Copilot), whether to install globally or into the current project, and which custom agents you want.
+
+macOS, Linux, or Git Bash on Windows:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/urviljoshi/skills/main/install.sh | bash
+```
+
+Windows PowerShell:
+
+```powershell
+irm https://raw.githubusercontent.com/urviljoshi/skills/main/install.ps1 | iex
+```
+
+Use the arrow keys to move, space to select, `a` to select all, and enter to confirm. To install without the menus (for example in CI):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/urviljoshi/skills/main/install.sh | bash -s -- --to claude,codex --skills all --yes
+```
+
+```powershell
+& ([scriptblock]::Create((irm https://raw.githubusercontent.com/urviljoshi/skills/main/install.ps1))) -To claude,codex -Skills all -Yes
+```
+
+Options: `--to` (`claude`, `codex`, `copilot`, `all`), `--skills` (names or `all`), `--agents` (names, `all`, or `none`), `--global` or `--project`, `--list`, `--ref <branch>`, `--yes`. In PowerShell the same options start with one dash and a capital letter (`-To`, `-Project`).
+
+Where the installer puts files:
+
+| Agent | Global | Project | Custom agents |
+| --- | --- | --- | --- |
+| Claude Code | `~/.claude/skills/` | `.claude/skills/` | `~/.claude/agents/` or `.claude/agents/` |
+| Codex | `~/.agents/skills/` | `.agents/skills/` | Not supported |
+| GitHub Copilot | `~/.copilot/skills/` | `.github/skills/` | `~/.copilot/agents/` or `.github/agents/` as `<name>.agent.md` |
+
 ### Any agent: `npx skills`
 
 ```bash
@@ -32,7 +68,8 @@ Clone the repository and copy the folders that you want.
 | Agent | Skills go in | Agents go in |
 | --- | --- | --- |
 | Claude Code | `~/.claude/skills/` or `<project>/.claude/skills/` | `~/.claude/agents/` or `<project>/.claude/agents/` |
-| Codex | `~/.codex/skills/` | Paste the body of the agent file into your prompt or `AGENTS.md` |
+| Codex | `~/.agents/skills/` or `<project>/.agents/skills/` | Paste the body of the agent file into your prompt or `AGENTS.md` |
+| GitHub Copilot | `~/.copilot/skills/` or `<project>/.github/skills/` | `<project>/.github/agents/<name>.agent.md` |
 | Other | The skills directory of your agent, or reference the `SKILL.md` from your `AGENTS.md` | Same as Codex |
 
 Each skill is a folder. Copy the whole folder, not only `SKILL.md`: some skills have scripts and reference files.
@@ -75,6 +112,7 @@ The other skills need nothing. The video skill needs:
 skills/<name>/SKILL.md      one folder per skill; optional scripts/ and references/
 agents/<name>.md            custom agents (Claude Code subagent format)
 .claude-plugin/             Claude Code plugin and marketplace manifests
+install.sh, install.ps1     interactive installers; they find new skills and agents automatically
 ```
 
 ## Contributing
